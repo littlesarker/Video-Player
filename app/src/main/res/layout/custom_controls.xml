@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/idRLControls"
+
+    >
+
+    <TextView
+
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="video title"
+        android:textAlignment="center"
+        android:id="@+id/idTVVideoTitle"
+        />
+
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:id="@+id/idback"
+            android:src="@drawable/ic_back"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:tint="@color/white"
+           />
+
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:id="@+id/idplay"
+            android:src="@drawable/ic_pause"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:tint="@color/white"
+           />
+
+        <ImageButton
+            android:background="@android:color/transparent"
+            android:layout_weight="1"
+            android:id="@+id/idforward"
+            android:src="@drawable/ic_forward"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:tint="@color/white" />
+
+
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+
+        <ImageButton
+            android:id="@+id/rotateScreenID"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_screen_rotation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.957"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        >
+
+
+        <TextView
+            android:textColor="#BA0CE8"
+            android:id="@+id/idRunningTimeID"
+            android:text="Tim"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <SeekBar
+            android:id="@+id/idSeekbarProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:progressTint="#F38A06"
+
+            />
+
+        <TextView
+            android:id="@+id/idTVTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="Time"
+            android:textColor="#BA0CE8"
+            android:textSize="15sp"
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
