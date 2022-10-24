@@ -2,7 +2,6 @@ package com.example.mrsplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -20,10 +19,11 @@ import android.widget.VideoView;
 
 public class VideoPlayerActivity extends AppCompatActivity {
 
-    boolean isPortrait = true;
+
+
     boolean isopen=true;
     private TextView videoTName,videoTime,timerun;
-    private ImageButton back,play,forward,rotate;
+    private ImageButton back,play,forward;
     private SeekBar videoSeekBar;
     private VideoView videoView;
     private  String videoName,videPath;
@@ -33,6 +33,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_player);
+
 
         videoName=getIntent().getStringExtra("VideoName");
         videPath=getIntent().getStringExtra("videoPath");
@@ -47,10 +48,12 @@ public class VideoPlayerActivity extends AppCompatActivity {
         controlURL=findViewById(R.id.idRLControls);
         videoRL=findViewById(R.id.idRLVideo);
         timerun=findViewById(R.id.idRunningTimeID);
-        rotate=findViewById(R.id.rotateScreenID);
 
 
         videoView.setVideoURI(Uri.parse(videPath));
+
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -62,6 +65,10 @@ public class VideoPlayerActivity extends AppCompatActivity {
         });
 
         videoTName.setText(videoName);
+
+
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,25 +105,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
 
      });
 
-     rotate.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
 
-             int as=videoView.getCurrentPosition();
-             if(isPortrait==true){
-                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                 isPortrait=false;
-
-
-             }else
-             {
-                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                 isPortrait=true;
-
-             }
-
-         }
-     });
 
      videoRL.setOnClickListener(new View.OnClickListener() {
          @Override
